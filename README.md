@@ -1,47 +1,48 @@
-Rack Designer
-Rack layout application for live events and production environments.
-Rack Designer lets you build and document equipment racks visually, manage a reusable device library, and export rider-ready PDF reports. Designed for live events, touring productions, permanent installations, and broadcast environments.
+PC Locker
+Fullscreen workstation lock overlay for Windows.
+PC Locker is a lightweight Windows utility that displays a fullscreen semi-transparent overlay to lock the workstation, blocking all keyboard input and preventing accidental interaction with open applications, settings, or parameters.
 
 Features
 
-Visual rack designer with drag-and-drop device placement
-Device library with 100+ preloaded professional devices (video, audio, lighting, network, power)
-Tray placement — place multiple sub-width devices side by side within a single rack row
-Multi-bay rack support — represent wide physical rack cases with independent columns
-PDF export — rack diagrams, device lists, power and weight totals, project summary
-CSV and JSON library import/export
-Keyboard shortcuts for all slot operations (Ctrl+C, Ctrl+X, Ctrl+V, Ctrl+D, Del)
-Undo stack per rack, up to 10 levels (Ctrl+Z)
-Slot notes — attach cable labels, IP addresses, or configuration reminders to any slot
-Project files (.rackproj) are portable, self-contained, and plain JSON
+Fullscreen overlay on all connected monitors simultaneously — no monitor left unprotected
+Low-level keyboard hook (WH_KEYBOARD_LL) — blocks all keystrokes including Win key, Ctrl+Alt+Del, Ctrl+Shift+Esc, and Alt+Tab
+Underlying applications remain visible and keep running normally
+Configurable unlock keyboard shortcut (default Ctrl+Alt+L)
+Password unlock — dialog opens on the monitor where the button was clicked
+Configurable overlay opacity (0.2 to 0.85)
+Single portable .exe — no installation required
+Also available as an installer
 
 Use cases
 
-Pre-production rack documentation and rider preparation
-Equipment planning for touring and temporary installations
-Power and weight budgeting per rack
-Sharing rack layouts with crew, clients, or venues
+Locking a media server during a live show to prevent accidental input
+Securing an unattended workstation during breaks
+Protecting open applications in recording sessions or broadcast environments
 
 How to use
 
-Run the installer and launch Rack Designer
-Go to PROJECT → New Project and fill in the metadata
-Go to DESIGNER → + Add Rack to create your first rack
-Drag devices from the LIBRARY tab onto the rack canvas
-Go to EXPORT to generate a PDF
+Launch PCLocker.exe — UAC elevation is requested automatically (required for the keyboard hook)
+The control panel appears at screen centre
+Click Lock PC to activate the overlay
+Unlock with the keyboard shortcut or click Unlock with password on any screen
+
+Distribution
+Two versions are available in the Releases tab:
+
+Portable — single .exe, no installation. Drop it anywhere and run.
+Installer — standard Windows setup. Installs and creates a Start Menu shortcut.
 
 System requirements
 
 Windows 10 / 11 (64-bit)
-1280 × 800 minimum display resolution
-~50 MB storage for the application
+Administrator privileges (auto-requested on launch)
 
 Technical notes
 
-All data is stored at %APPDATA%\RackDesigner\ — library, categories, and project files
-Project files (.rackproj) are plain JSON and can be backed up, version-controlled, or shared
-Editing a device in the library does not update devices already placed in racks — slots store a snapshot at placement time
-The preloaded library is seeded only on first launch. It is not restored on reinstall unless the library is empty
+Configuration is saved to locker_config.json in the same folder as the executable (portable version)
+Deleting locker_config.json resets the user password to the default value (password) — change it before deploying
+Win+L (Windows lock screen) is not blocked by design — it can be used as an emergency exit
+Full-screen exclusive applications may render above the overlay on secondary monitors
 
 Version
 See the Releases tab for the full version history.
