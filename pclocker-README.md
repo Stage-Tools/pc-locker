@@ -9,7 +9,7 @@ PC Locker is a lightweight Windows utility that displays a fullscreen semi-trans
 ## Features
 
 - Fullscreen overlay on all connected monitors simultaneously — no monitor left unprotected
-- Low-level keyboard hook (WH_KEYBOARD_LL) — blocks all keystrokes including Win key, Ctrl+Alt+Del, Ctrl+Shift+Esc, and Alt+Tab
+- Low-level keyboard hook (WH_KEYBOARD_LL) — blocks all keystrokes including the Win key, Ctrl+Shift+Esc and Alt+Tab
 - Underlying applications remain visible and keep running normally
 - Configurable unlock keyboard shortcut (default Ctrl+Alt+L)
 - Password unlock — dialog opens on the monitor where the button was clicked
@@ -46,7 +46,7 @@ Two versions are available in the Releases tab:
 
 - Configuration is saved to `locker_config.json` in the same folder as the executable (portable version)
 - Deleting `locker_config.json` resets the user password to the default value (`password`) — change it before deploying
-- Win+L (Windows lock screen) is not blocked by design — it can be used as an emergency exit
+- Win+L is disabled while locked and re-enabled on unlock. Ctrl+Alt+Del cannot be blocked by any application (the Windows security screen, including Task Manager, stays available)
 - Full-screen exclusive applications may render above the overlay on secondary monitors
 
 ## Version
